@@ -12,6 +12,4 @@ mongoose.connect(`mongodb+srv://${process.env.USER_MONGODB}:${process.env.PASSWO
 
 app.use(express.json()) // configurando o express para entender req em json
 app.use(routes)
-
-let port = process.env.PORT || 3333
-app.listen(port)
+app.listen(process.env.PORT || 3333)
