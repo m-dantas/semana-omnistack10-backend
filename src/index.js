@@ -1,5 +1,6 @@
 const express = require('express')
 const mongoose = require('mongoose')
+const cors = require('cors')
 const routes = require('./routes')
 require('dotenv/config');
 
@@ -10,6 +11,7 @@ mongoose.connect(`mongodb+srv://${process.env.USER_MONGODB}:${process.env.PASSWO
   useUnifiedTopology: true 
 })
 
+app.use(cors())
 app.use(express.json()) // configurando o express para entender req em json
 app.use(routes)
 
